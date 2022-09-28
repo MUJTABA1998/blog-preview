@@ -1,26 +1,136 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-container {
+  @apply w-full px-4 py-10 mx-auto max-w-7xl lg:px-4 lg:pl-10;
+}
+
+@font-face {
+  font-family: "Roboto Slab", serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+}
+@font-face {
+  font-family: "Oswald", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+}
+@font-face {
+  font-family: "Source Sans Pro", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @apply font-primary;
+  @apply bg-white;
+  @apply selection:bg-gray-500 selection:text-white;
+  @apply overflow-x-hidden;
+}
+p,
+.ce-paragraph {
+  @apply text-[14px] md:text-[18px] text-gray-800 font-[400] tracking-wide first-letter:capitalize font-main;
+}
+h2 {
+  @apply text-[18px] md:text-[25px] font-[800] text-gray-800 first-letter:capitalize font-main tracking-wide;
+}
+h1 {
+  @apply text-[20px] md:text-[30px] font-[900] text-gray-800 first-letter:capitalize font-main tracking-wide;
+}
+h3 {
+  @apply text-[16px] md:text-[23px] font-[700] text-gray-800 first-letter:capitalize font-main tracking-wide;
+}
+h4 {
+  @apply text-[14px] md:text-[17px] font-[600] text-gray-800 first-letter:capitalize font-main tracking-wide;
+}
+h5 {
+  @apply text-[12px] md:text-[15px] font-[600]  font-main tracking-wide;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+li,
+.cdx-list--ordered,
+.cdx-list--unordered {
+  @apply -ml-3 text-[11px] md:text-[15px] text-gray-500 font-main;
+}
+.ce-rawtool__textarea .cdx-input {
+  @apply text-gray-700 bg-gray-400;
 }
 
-* {
-  box-sizing: border-box;
+.file-input {
+  display: none;
+}
+.codex-editor__redactor {
+  @apply w-[650px] h-auto pl-5  gap-y-7  font-main;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.img-container {
+  @apply w-[300px] sm:w-[500px] md:w-full  h-[100px] flex items-center justify-center mt-2 mb-5 bg-[#74b9ff] rounded-[7px];
+}
+
+.img-show {
+  @apply object-contain  w-[320px] sm:w-[450px] md:w-[672px] h-[200px] md:h-[400px];
+}
+.hide-label,
+.hide-icon {
+  display: none;
+}
+#editorjs {
+  @apply min-h-[200px] pb-0 w-full -mt-5;
+}
+.ce-rawtool {
+  @apply min-h-[100px] w-full py-3 px-2 rounded-[5px] mb-3 bg-gray-600 text-white text-sm font-main;
+}
+.ce-rawtool__textarea {
+  @apply w-full h-full mb-5 overflow-y-hidden text-gray-100 bg-transparent border-none outline-none overscroll-contain;
+}
+
+.blog-content > h1 {
+  @apply text-3xl font-extrabold tracking-wider text-gray-800 uppercase font-main;
+}
+.link-icon {
+  @apply w-6 h-6 text-xs;
+}
+.code-icon {
+  @apply w-10 h-10;
+}
+.link-section {
+  @apply flex h-[50px] items-center justify-start w-full gap-3 bg-white rounded-sm;
+}
+.link-input {
+  @apply w-full h-full text-sm placeholder:text-sm placeholder:text-gray-200 bg-transparent border-none outline-none text-[#74b9ff] font-primary;
+}
+.code-block {
+  @apply flex mb-2 flex-col items-center justify-center h-auto max-w-4xl gap-5 py-5 rounded-[7px] bg-black;
+}
+.code-textarea {
+  @apply w-full h-[100px] text-gray-50 placeholder:text-gray-50 text-sm bg-transparent border-none outline-none pl-2 self-start;
+}
+.cdx-quote {
+  @apply w-[300px] sm:w-[500px] md:w-full px-2 py-5 bg-white border-none;
+}
+
+.active,
+.active > h4 {
+  @apply text-gray-900 bg-white rounded-md hover:text-gray-900;
+}
+.info {
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-indigo-300;
+}
+.danger {
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-red-300;
+}
+.success {
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-green-400;
+}
+.ce-block {
+  @apply w-[320px] sm:w-[450px] md:w-[672px];
 }
