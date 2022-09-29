@@ -3,7 +3,7 @@ import { useGetAllBlogs } from "../Controllers/blogController";
 import SkeletonLoader from "../Components/CoreComponents/Skeleton";
 import Link from "next/link";
 
-const index = () => {
+const Index = () => {
   const { loading, blogs } = useGetAllBlogs();
   // const [loader, setLoader] = useState(true);
 
@@ -74,4 +74,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
