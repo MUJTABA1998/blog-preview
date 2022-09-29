@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -15,6 +16,10 @@
 @font-face {
   font-family: "Roboto Slab", serif;
   src: url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+}
+@font-face {
+  font-family: "Arimo", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap");
 }
 
 @font-face {
@@ -123,13 +128,16 @@ li,
   @apply text-gray-900 bg-white rounded-md hover:text-gray-900;
 }
 .info {
-  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-indigo-300;
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[5px] bg-indigo-600;
 }
 .danger {
-  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-red-300;
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[5px] bg-red-600;
 }
 .success {
-  @apply px-4 py-5  text-white font-main tracking-wider rounded-[3px] bg-green-400;
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[5px] bg-green-600;
+}
+.loading {
+  @apply px-4 py-5  text-white font-main tracking-wider rounded-[5px] bg-green-600;
 }
 .ce-block {
   @apply w-[320px] sm:w-[450px] md:w-[672px];

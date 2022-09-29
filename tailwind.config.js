@@ -9,7 +9,7 @@ module.exports = {
       fontFamily: {
         primary: ["Roboto Slab", "serif"],
         secondary: ["Montserrat", "sans-serif"],
-        main: ["Oswald", "sans-serif"],
+        main: ["Arimo", "sans-serif"],
       },
       colors: {
         primary: "#FFE14B",

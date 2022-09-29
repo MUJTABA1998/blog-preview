@@ -1,7 +1,29 @@
 import axios from "axios";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import store from "../store";
+import { allBlogs } from "../store/blogSlice";
 
 class BlogController {
+  static getAllBlogs() {
+    return new Promise((resolve, reject) => {
+      console.log("Calling..........");
+      axios
+        .get("https://speecto.herokuapp.com/blog/blog")
+        .then((res) => {
+          console.log(res, "Response");
+          if (res.data.success) {
+            store.dispatch(allBlogs(res.data.data));
+            resolve(true);
+          } else {
+            reject(res.data.error.message);
+          }
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  }
+
   static getBlog(id) {
     return new Promise((resolve, reject) => {
       axios
@@ -21,6 +43,29 @@ class BlogController {
     });
   }
 }
+
+export const useGetAllBlogs = () => {
+  const { blogs } = store.getState().blog;
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    if (!blogs.length > 0) {
+      setLoading(true);
+      setTimeout(() => {
+        BlogController.getAllBlogs()
+          .then((res) => {
+            if (res) {
+              setBlogs(res);
+            }
+          })
+          .catch((err) => setLoading(false));
+      }, 500);
+    } else {
+      setLoading(false);
+    }
+  }, [blogs.length, setLoading]);
+
+  return { loading, blogs };
+};
 
 export const useGetSingleBlog = (id) => {
   const [loading, setLoading] = React.useState(false);
