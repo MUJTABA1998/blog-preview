@@ -38,12 +38,9 @@ const Index = () => {
           ) : (
             <>
               {blogs?.map((blog, index) => (
-                <Link href={`/blog/${blog?._id}`}>
+                <Link href={`/blog/${blog?._id}`} key={index}>
                   <a>
-                    <div
-                      className="max-w-[300px] flex flex-col justify-start items-start gap-[10px] w-full h-[300px] "
-                      key={index}
-                    >
+                    <div className="max-w-[300px] flex flex-col justify-start items-start gap-[10px] w-full h-[300px] ">
                       <div className="w-full max-h-[150px] h-full overflow-hidden">
                         <img
                           src={blog?.picture ? blog.picture.image.url : ""}
